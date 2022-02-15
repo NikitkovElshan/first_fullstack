@@ -1,0 +1,55 @@
+<div class="range1">
+  <div class="outer">
+    <div class="middle">
+      <div class="inner">
+          <h2>Регистрация</h2>
+          <form [formGroup]="form" (ngSubmit)="submit()">
+          <div class="form">
+            <input formControlName="email" type="text" placeholder="Email">
+            <p
+              *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+            >
+              <span style="color: red">Не верный формат Email</span>
+            </p>
+            <hr>
+            <input formControlName="name" type="text" placeholder="Имя пользователя">
+            <p
+              *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+            >
+              <span style="color: red">Минимальная длинна имени 3 символа</span>
+            </p>
+            <hr>
+            <input formControlName="password" type="password"  placeholder="Пароль">
+            <p
+              *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+            >
+              <span style="color: red">Минимальная длинна пароля 6 символов</span>
+            </p>
+            <hr>
+            <input formControlName="password2" type="password" placeholder="Повторите пароль">
+            <p
+              *ngIf="form.get('password2')?.invalid && form.get('password2')?.touched"
+            >
+              <span style="color: red">Минимальная длинна пароля 6 символов</span>
+            </p>
+            <p
+              *ngIf="form.get('password')?.touched && form.get('password2')?.touched &&
+                     form.get('password')?.valid && form.get('password2')?.valid &&
+                    form.get('password')?.value !== form.get('password2')?.value
+                    "
+            >
+              <span style="color: red">Пароли не совпадают</span>
+            </p>
+            <hr>
+            <button type="submit" [disabled]="form.invalid || form.disabled || form.get('password')?.value !== form.get('password2')?.value" class="b1"> Зарегистрироваться </button>
+            <p></p>
+            <a routerLink="/login">Авторизация</a>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

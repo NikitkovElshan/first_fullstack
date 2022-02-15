@@ -1,0 +1,60 @@
+.auth-block {
+  width: 35%;
+  position: absolute;
+  left: 35%;
+  top: 10%;
+  transform: translate(-10%, -10%);
+}
+
+$baseMenuBackground: #111;
+$secondaryMenuBackground: #0186ba;
+$gutter: 11px;
+
+
+.animenu {
+  display: block;
+  ul {
+    padding: 0;
+    list-style: none;
+    font: 0 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+
+  li, a {
+    display: inline-block;
+    font-size: 15px;
+  }
+
+  a {
+    color: lighten($baseMenuBackground, 60%);
+    text-decoration: none;
+  }
+}
+
+
+.animenu__nav {
+  background-color: #403d3d;
+  > li {
+    position: relative;
+    border-right: 1px solid lighten(#403d3d, 20%);
+
+    > a {
+      padding: $gutter 3 * $gutter;
+      text-transform: uppercase;
+    }
+    &:hover {
+      > ul {
+        opacity: 1;
+        visibility: visible;
+        margin: 0;
+      }
+      > a {
+        color: #fff;
+      }
+    }
+  }
+}

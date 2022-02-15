@@ -1,0 +1,42 @@
+{
+  "name": "first_fullstak",
+  "version": "1.0.0",
+  "description": "fullstak ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r dotenv/config dist/index dotenv_config_path=./.env",
+    "server": "nodemon -r dotenv/config dist/index dotenv_config_path=./.env",
+    "build": "tsc",
+    "client-install": "npm install --prefix client",
+    "client-build": "npm run build --prefix client",
+    "client": "npm run start --prefix client"
+  },
+  "keywords": [
+    "express",
+    "angular"
+  ],
+  "author": "El",
+  "license": "ISC",
+  "dependencies": {
+    "@types/mongoose": "^5.11.97",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "md5-typescript": "^1.0.5",
+    "mongodb": "^4.3.0",
+    "mongoose": "^6.1.7",
+    "path": "^0.12.7",
+    "typescript": "^4.5.5",
+    "ws": "^8.4.2"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/node": "^14.18.9",
+    "@types/validator": "^13.1.0",
+    "concurrently": "^7.0.0",
+    "dotenv": "^12.0.4",
+    "nodemon": "^2.0.15"
+  }
+}

@@ -1,0 +1,14 @@
+<div class="auth-block">
+  <router-outlet></router-outlet>
+</div>
+
+
+<nav class="animenu">
+  <ul class="animenu__nav">
+    <li routerLinkActive="active"><a routerLink="/products">Product</a></li>
+    <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
+    <li routerLinkActive="active"><a routerLink="/main">Main-Page</a></li>
+    <li (click)="logout()"><a style="cursor: pointer">Logout</a></li>
+
+  </ul>
+</nav>

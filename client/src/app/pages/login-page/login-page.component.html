@@ -1,0 +1,33 @@
+<div class="range1">
+  <div class="outer">
+    <div class="middle">
+      <div class="inner">
+          <h2>Вход</h2>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form">
+              <input formControlName="email" type="text" placeholder="Пользователь">
+              <p
+                *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+              >
+                <span style="color: red">Не верный формат Email!</span>
+              <hr>
+              <input formControlName="password" type="password" placeholder="Пароль">
+              <p
+                *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+              >
+                <span style="color: red">Пароль должен быть минимум 6 символов!</span>
+              </p>
+              <hr>
+              <button  type="Submit" [disabled]="form.invalid || form.disabled" class="b1"> Авторизация </button>
+              <p>У вас нет аккаунта?</p>
+              <p></p>
+              <a routerLink="/register">Регистрация</a>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
